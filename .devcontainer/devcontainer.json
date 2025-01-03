@@ -1,13 +1,19 @@
 {
     "name": "sample_blog",
-    "image": "mcr.microsoft.com/vscode/devcontainers/ruby:0-3.0-bullseye"
+    "image": "mcr.microsoft.com/vscode/devcontainers/ruby:0-3.0-bullseye",
     // "settings": {
     //     "terminal.integrated.shell.linux": "/bin/bash"
     // },
-    // "extensions": [
-    //     "ms-vscode.cpptools",
-    //     "ms-python.python"
-    // ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+            "ritwickdey.LiveServer",
+            "castwide.solargraph",
+            "mhutchie.git-graph",
+            "GitHub.copilot"
+            ]
+        }
+    }
     // "postCreateCommand": "pip install -r requirements.txt",
     // "remoteUser": "vscode"
 }
