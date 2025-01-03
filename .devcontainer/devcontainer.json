@@ -10,10 +10,11 @@
             "ritwickdey.LiveServer",
             "castwide.solargraph",
             "mhutchie.git-graph",
-            "GitHub.copilot"
+            "GitHub.copilot",
+            "Shopify.ruby-lsp"
             ]
         }
-    }
-    // "postCreateCommand": "pip install -r requirements.txt",
+    },
+    "postCreateCommand": "gem install jekyll:4.2.1 webrick"
     // "remoteUser": "vscode"
 }
