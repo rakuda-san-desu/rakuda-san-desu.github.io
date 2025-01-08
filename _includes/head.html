@@ -4,6 +4,11 @@
   {% else %}
     <title>Test Page: Don't Panic</title>
   {% endif %}
+  {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+  {% else %}
+    <meta name="description" content="This is a dangerous site.">
+  {% endif %}
   <link href="/favicon.png" rel="icon">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
