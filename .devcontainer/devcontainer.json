@@ -1,20 +1,44 @@
 {
     "name": "sample_blog",
-    "image": "mcr.microsoft.com/vscode/devcontainers/ruby:0-3.0-bullseye",
+    "image": "mcr.microsoft.com/devcontainers/ruby:3.2",
     // "settings": {
     //     "terminal.integrated.shell.linux": "/bin/bash"
     // },
+    "onCreateCommand": "gem install solargraph -v '0.50.0' -N",
+    "updateContentCommand": "bundle install",
     "customizations": {
         "vscode": {
             "extensions": [
-            "ritwickdey.LiveServer",
             "castwide.solargraph",
             "mhutchie.git-graph",
             "GitHub.copilot",
-            "Shopify.ruby-lsp"
-            ]
+            "Shopify.ruby-lsp",
+            "castwide.solargraph" 
+            ],
+            "settings": {
+                // Settings for Solargraph
+                // https://github.com/castwide/solargraph
+                "solargraph.useBundler":  false,
+                "solargraph.diagnostics": false,
+                "solargraph.formatting":  true,  // Use Ctrl+Shift+P->Format to format
+                "solargraph.autoformat":  false,
+                "solargraph.definitions": true,
+                "solargraph.completion":  true,
+                "solargraph.references":  true,
+                "solargraph.symbols":     true,
+                "solargraph.rename":      true,
+                "solargraph.hover":       true,
+                
+                // Settings for Ruby LSP
+                // https://github.com/Shopify/vscode-ruby-lsp
+                "rubyLsp.formatter": "none",
+                "rubyLsp.enabledFeatures": {
+                    "diagnostics": false,
+                    "formatting":  false
+                }
+            }
         }
-    },
-    "postCreateCommand": "gem install jekyll:4.2.1 webrick"
+    }
+    // "postCreateCommand": "gem install jekyll:4.2.1 webrick"
     // "remoteUser": "vscode"
 }
