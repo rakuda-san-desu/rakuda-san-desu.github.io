@@ -1,0 +1,26 @@
+# Jekyll generated files
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+
+# WordPress and migration secrets/backups
+wp-config.php
+export/
+wordpress-export*.xml
+
+# Unpublished WordPress posts kept locally
+_posts/2021-02-20-post-1640.md
+_posts/2021-08-19-post-1648.md
+
+# WordPress plugin data copied under uploads; keep media year folders only
+wp-content/uploads/aioseo/
+wp-content/uploads/aioseo-logs/
+wp-content/uploads/crayon-syntax-highlighter/
+wp-content/uploads/pz-linkcard/
+
+# Local editor/runtime files
+.ruby-lsp/
+
+# Migration bookkeeping (may contain draft metadata)
+migration-manifest.json

@@ -1,0 +1,21 @@
+---
+layout: default
+title: ぶろぐの目次
+permalink: /blog/
+---
+<section class="archive">
+  <h1>ぶろぐの目次</h1>
+  <div class="post-list">
+    {% for post in site.posts %}
+    <article class="kiji-list">
+      <div class="kiji-body">
+        <div class="entry-meta"><time datetime="{{ post.date | date_to_xmlschema }}">✎ {{ post.date | date: '%Y年%m月%d日' }}</time>{% if post.categories %}<span>{{ post.categories | join: '、' }}</span>{% endif %}</div>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+

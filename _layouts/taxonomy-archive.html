@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<section class="taxonomy-archive">
+  <p class="taxonomy-label">{{ page.taxonomy }}別の記事</p>
+  <h1>{{ page.term }}</h1>
+  <div class="post-list">
+    {% assign matched = site.posts | where_exp: "post", "post[page.taxonomy] contains page.term" %}
+    {% for post in matched %}
+    <article class="kiji-list">
+      <div class="kiji-body">
+        <div class="entry-meta"><time datetime="{{ post.date | date_to_xmlschema }}">✎ {{ post.date | date: '%Y年%m月%d日' }}</time></div>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,112 @@
+@charset "utf-8";
+:root {
+  --brown: #473422;
+  --header: #b68c58;
+  --cream: #fff8ef;
+  --green: #77ba57;
+  --line: #e7d8c6;
+  font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic ProN", sans-serif;
+  color: var(--brown);
+}
+* { box-sizing: border-box; }
+html { background: var(--cream); }
+body { margin: 0; background: var(--cream); color: var(--brown); font-size: 14px; line-height: 1.7; }
+a { color: #76502c; }
+a:hover { color: #a05c2a; }
+.site-header { position: fixed; inset: 0 0 auto; z-index: 10; background: var(--header); box-shadow: 0 1px 5px rgba(71,52,34,.18); }
+.header-inner, .container, .footer-inner { width: min(1200px, calc(100% - 20px)); margin: 0 auto; }
+.header-inner { min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.site-title { text-decoration: none; color: var(--header); font-size: 1.25em; font-weight: bold; background: #feffff; border-radius: 5px; padding: 5px 10px; margin-left: 10px; }
+.site-nav { display: flex; align-items: center; gap: 4px; }
+.site-nav a { color: #fff; text-decoration: none; padding: 10px 12px; }
+.site-nav a:hover { background: rgba(255,255,255,.16); }
+.container { display: flex; align-items: flex-start; gap: 2%; margin-top: 100px; margin-bottom: 55px; }
+.contents { width: 70%; min-width: 0; }
+#sidebar { width: 28%; }
+.hero { padding: 26px 30px; margin-bottom: 30px; background: #f1dfc9; border-radius: 5px; }
+.hero h1 { margin: 0 0 6px; font-size: 2em; }
+.eyebrow { margin: 0 0 4px; letter-spacing: .14em; font-size: .8em; color: #946e42; }
+h1, h2, h3 { line-height: 1.35; }
+h1 { font-size: 1.8em; margin: 0 0 20px; }
+h2 { font-size: 1.35em; margin: 0 0 18px; }
+h3 { font-size: 1.15em; margin: 5px 0; }
+.home-section, .archive, .entry { margin-bottom: 30px; }
+.home-section > h2, .archive > h1 { border-bottom: 2px solid var(--line); padding-bottom: 8px; }
+.post-list { display: grid; gap: 14px; }
+.kiji-list { background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 16px 18px; }
+.kiji-list h2, .kiji-list h3 { margin: 4px 0 6px; }
+.kiji-list h2 a, .kiji-list h3 a { text-decoration: none; }
+.kiji-list p { margin: 4px 0 0; }
+.entry { background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 24px 28px; }
+.entry h1 { margin-top: 4px; }
+.entry-meta { display: flex; flex-wrap: wrap; gap: 12px; color: #8d7760; font-size: .9em; }
+.entry-content { overflow-wrap: anywhere; }
+.entry-content img { max-width: 100%; height: auto; }
+.entry-content pre { overflow-x: auto; padding: 14px; background: #f7f2ec; }
+.entry-content blockquote { margin-left: 0; padding-left: 1em; border-left: 4px solid var(--header); }
+.tags { color: #8d7760; border-top: 1px solid var(--line); padding-top: 12px; }
+.tags span { display: inline-block; margin-right: 4px; }
+.post-nav { display: flex; justify-content: space-between; gap: 14px; border-top: 1px solid var(--line); padding-top: 16px; }
+.widget { margin-bottom: 28px; }
+.widget h2 { font-size: 1.1em; border-bottom: 2px solid var(--header); padding: 5px 0; margin-bottom: 10px; }
+.widget ul { list-style: none; padding: 0; margin: 0; }
+.widget li { border-bottom: 1px dotted var(--line); padding: 5px 0; }
+.widget li a { text-decoration: none; }
+.category-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.category-list a { color: #fff; background: var(--brown); border-radius: 3px; padding: 3px 8px; text-decoration: none; font-size: .9em; }
+.button { display: inline-block; padding: 7px 15px; background: var(--brown); color: #fff; border-radius: 3px; text-decoration: none; }
+.button:hover { background: #76502c; color: #fff; }
+.more-link { margin-top: 18px; }
+.site-footer { background: var(--green); color: #fff; padding: 18px 0; }
+.footer-inner { display: flex; justify-content: space-between; gap: 12px; }
+.site-footer a { color: #fff; margin-left: 14px; text-decoration: none; }
+@media (max-width: 828px) {
+  .header-inner { min-height: 56px; }
+  .site-title { margin-left: 0; }
+  .site-nav a { padding: 8px 5px; font-size: .9em; }
+  .container { display: block; margin-top: 82px; }
+  .contents, #sidebar { width: 100%; }
+  #sidebar { margin-top: 35px; }
+  .entry { padding: 18px; }
+  .hero { padding: 20px; }
+  .footer-inner { display: block; }
+  .site-footer nav { margin-top: 8px; }
+  .site-footer a { margin: 0 14px 0 0; }
+}
+@media (max-width: 520px) {
+  .header-inner { align-items: flex-start; padding: 8px 0; }
+  .site-nav { flex-wrap: wrap; justify-content: flex-end; gap: 0; }
+  .site-nav a { font-size: .78em; padding: 4px; }
+  .site-title { font-size: 1em; white-space: nowrap; }
+}
+
+
+.nav-dropdown { position: relative; color: #fff; }
+.nav-dropdown summary { cursor: pointer; list-style: none; color: #fff; padding: 10px 12px; }
+.nav-dropdown summary::-webkit-details-marker { display: none; }
+.nav-dropdown summary::after { content: " ▾"; font-size: .8em; }
+.nav-dropdown[open] summary, .nav-dropdown summary:hover { background: rgba(255,255,255,.16); }
+.dropdown-menu { position: absolute; right: 0; top: 100%; min-width: 340px; padding: 8px; background: #fff; border: 1px solid #d8c4ac; box-shadow: 0 3px 8px rgba(71,52,34,.2); }
+.dropdown-menu a { display: block; color: var(--brown); text-decoration: none; line-height: 1.5; padding: 9px 10px; white-space: normal; }
+.dropdown-menu a:hover { background: #f4eadf; color: #76502c; }
+@media (max-width: 520px) {
+  .nav-dropdown summary { font-size: .78em; padding: 4px; }
+  .dropdown-menu { right: -8px; min-width: min(340px, 90vw); }
+}
+
+.home-title-image { display: block; width: 80%; height: auto; margin: -6px auto 26px; max-width: 80%; }
+.home-message { text-align: left; }
+.home-message p { margin: 0 0 1.2em; }
+@media (max-width: 828px) {
+  .home-title-image { margin: 0 auto 20px; max-width: 80%; }
+}
+
+
+.taxonomy-label { color: #8d7760; font-size: .9em; margin: 0 0 4px; }
+.taxonomy-links { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+.taxonomy-links li a { display: block; background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 9px 12px; text-decoration: none; }
+
+/* WordPressテーマの波線をサイドバー見出しに適用 */
+.widget h2 { border-bottom: 0; padding-bottom: 14px; background: url("../images/lineLong.png") left bottom / 100% 12px no-repeat; }
+
+
