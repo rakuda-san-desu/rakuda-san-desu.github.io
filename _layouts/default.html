@@ -8,56 +8,19 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="site-title" href="{{ '/' | relative_url }}"><span>{{ site.title }}</span></a>
-      <nav class="site-nav" aria-label="メインメニュー">
-        <a href="{{ '/' | relative_url }}">ホーム</a>
-        <a href="{{ '/blog/' | relative_url }}">ぶろぐの目次</a>
-        <a href="{{ '/%e3%82%89%e3%81%8f%e3%81%a0%f0%9f%90%ab%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/' | relative_url }}">らくだ🐫について</a>
-        <details class="nav-dropdown">
-          <summary>学習のまとめ</summary>
-          <div class="dropdown-menu">
-            <a href="{{ '/rakudas-rails-tutorial/' | relative_url }}">らくだ🐫にもできる<br>Railsチュートリアルのまとめ</a>
-            <a href="{{ '/rakudas-git-lesson/' | relative_url }}">わかばちゃんと学ぶ git使い方入門を<br>ターミナルで実行したいらくだ🐫のまとめ</a>
-          </div>
-        </details>
-      </nav>
-    </div>
-  </header>
+  {% include header.html %}
 
   <main class="container">
     <div class="contents">
       {{ content }}
     </div>
-    <aside id="sidebar">
-      <section class="widget">
-        <h2>最近の記事</h2>
-        <ul>
-          {% for post in site.posts limit:5 %}
-          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </section>
-      <section class="widget">
-        <h2>カテゴリー</h2>
-        <p><a href="{{ '/categories/' | relative_url }}">カテゴリー一覧を見る</a></p>
-      </section>
-      <section class="widget">
-        <h2>タグ</h2>
-        <p><a href="{{ '/tags/' | relative_url }}">タグ一覧を見る</a></p>
-      </section>
-    </aside>
+    {% include sidebar.html %}
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span>© {{ 'now' | date: '%Y' }} {{ site.title }}</span>
-      <nav><a href="{{ '/' | relative_url }}">ホーム</a><a href="{{ '/blog/' | relative_url }}">ぶろぐの目次</a></nav>
-    </div>
-  </footer>
+  {% include footer.html %}
 </body>
 </html>
+
 
 
 

@@ -1,0 +1,17 @@
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="{{ '/' | relative_url }}"><span>{{ site.title }}</span></a>
+      <nav class="site-nav" aria-label="メインメニュー">
+        <a href="{{ '/' | relative_url }}">ホーム</a>
+        <a href="{{ '/blog/' | relative_url }}">ぶろぐの目次</a>
+        <a href="{{ '/%e3%82%89%e3%81%8f%e3%81%a0%f0%9f%90%ab%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/' | relative_url }}">らくだ🐫について</a>
+        <details class="nav-dropdown">
+          <summary>学習のまとめ</summary>
+          <div class="dropdown-menu">
+            <a href="{{ '/rakudas-rails-tutorial/' | relative_url }}">らくだ🐫にもできる<br>Railsチュートリアルのまとめ</a>
+            <a href="{{ '/rakudas-git-lesson/' | relative_url }}">わかばちゃんと学ぶ git使い方入門を<br>ターミナルで実行したいらくだ🐫のまとめ</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
